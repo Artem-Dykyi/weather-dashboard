@@ -1,0 +1,41 @@
+.hero{
+    // background-image: ;
+
+    &__title{
+        font-weight: 600;
+        font-size: 40px;
+        // color: #fff;
+        color: aquamarine;
+        text-align: center;
+    }
+
+
+
+
+
+    &__input{
+        border-radius: 10px 0 0 10px;
+        padding-left: 29px;
+        padding-right: 432px;
+        padding-top: 13px;
+        padding-bottom: 12px;
+        border-style: none;
+
+        font-weight: 500;
+        font-size: 14px;
+        color: #878787;
+    }
+
+    &__search_btn{
+        background: #ffb36c;
+        border-radius: 0 10px 10px 0;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-style: none;
+
+        border-left: 2px solid #000;
+        
+    }
+}

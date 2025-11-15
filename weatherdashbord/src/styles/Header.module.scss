@@ -1,0 +1,54 @@
+.header{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    
+
+    &__logo{
+        // margin-left: 150px;
+        width: 82px;
+        height: 56px;
+    }
+
+    &__main_box{
+        display: flex;
+        align-items: center;
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+        gap: 42px;
+        margin-left: 111px;
+    }
+
+    &__list_item{
+        font-weight: 500;
+        font-size: 12px;
+        color: #000;
+    }
+
+    &__prof_box{
+        display: flex;
+        align-items: center;
+        margin-left: 519px;
+    }
+
+    &__btn{
+        border-radius: 10px;
+        padding: 10px 20px;
+        background: #ffb36c;
+        margin-right: 27px;
+
+        font-weight: 500;
+        font-size: 12px;
+        color: #000;
+        border: none;
+    }
+
+    &__icon_prof{
+        width: 50px;
+        height: 50px;
+    }
+}
+

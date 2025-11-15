@@ -1,0 +1,26 @@
+import React from "react";
+import s from "../styles/Header.module.scss";
+import c from "../styles/Container.module.scss"
+
+export function Header() {
+  return (
+    <header className={s.header}>
+      <div className={c.container}>
+        <div className={s.header__main_box}>
+          <img src="/image/logo.png" alt="" className={s.header__logo} />
+          <div className={s.header__box}>
+            <ul className={s.header__list}>
+              <li className={s.header__list_item}>Who we are</li>
+              <li className={s.header__list_item}>Contacts</li>
+              <li className={s.header__list_item}>Menu</li>
+            </ul>
+          </div>
+          <div className={s.header__prof_box}>
+            <button className={s.header__btn}>Sign Up</button>
+            <img src="/image/user.png" alt="" className={s.header__icon_prof} />
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
