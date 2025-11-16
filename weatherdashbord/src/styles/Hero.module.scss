@@ -1,17 +1,50 @@
 .hero{
-    // background-image: ;
+    background-image: url("../../src/image/mainCloud.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &__title{
         font-weight: 600;
-        font-size: 40px;
+        // font-size: 40px;
         // color: #fff;
-        color: aquamarine;
+        // color: aquamarine;
+        color: #fff;
         text-align: center;
+        padding-top: 100px;
+        // padding-bottom: 80px;
     }
 
+    &__box{
+        display: flex;
+        // justify-content: center;
+        margin-left: 172px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
 
+    &__text{
+        width: 345px;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: right;
+        color: #fff;
+        padding-right: 52px;
+        border-right: solid 2px white;
+    }
 
+    &__month{
+        width: 164px;
+        font-weight: 500;
+        font-size: 24px;
+        color: #fff;
+        padding-left: 52px;
+    }
 
+    &__search_box{
+        padding-bottom: 104px;
+        display: flex;
+        justify-content: center;
+    }
 
     &__input{
         border-radius: 10px 0 0 10px;
@@ -24,6 +57,7 @@
         font-weight: 500;
         font-size: 14px;
         color: #878787;
+
     }
 
     &__search_btn{
