@@ -1,8 +1,8 @@
 import React from "react";
 import s from "../styles/Header.module.scss";
-import c from "../styles/Container.module.scss"
+import c from "../styles/Container.module.scss";
 
-export function Header() {
+export function Header({ onClick, currentUser }) {
   return (
     <header className={s.header}>
       <div className={c.container}>
@@ -16,7 +16,14 @@ export function Header() {
             </ul>
           </div>
           <div className={s.header__prof_box}>
-            <button className={s.header__btn}>Sign Up</button>
+            {currentUser ? (
+              <p className={s.header__user_name}>{currentUser}</p>
+            ) : (
+              <button className={s.header__btn} onClick={onClick}>
+                Sign Up
+              </button>
+            )}
+
             <img src="/image/user.png" alt="" className={s.header__icon_prof} />
           </div>
         </div>

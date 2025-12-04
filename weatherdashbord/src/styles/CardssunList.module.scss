@@ -1,0 +1,42 @@
+// .sunList{
+//     background-color: blueviolet;
+//     &__wrapper{
+//         display: flex;
+//         gap: 90px;
+//     }
+// }
+
+.sunList {
+  background-color: blueviolet;
+ 
+}
+
+ .sunList__wrapper {
+    display: flex;
+    gap: 90px;
+    flex-wrap: nowrap;
+  }
+
+.slider {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px;
+
+  @media screen and (min-width: 768px){
+          width: 968px;  
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 1440px;
+        }
+}
+
+.slider .sunList__wrapper {
+  display: flex;
+  gap: 90px;
+  flex-wrap: nowrap;
+  width: max-content; // важливо!
+
+}

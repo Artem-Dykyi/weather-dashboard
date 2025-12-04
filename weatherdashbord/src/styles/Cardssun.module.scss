@@ -1,0 +1,195 @@
+.weather{
+    padding-bottom: 35px;
+
+    &__box{
+        background-color: coral;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 35px;
+    }
+
+    &__card{
+        width: 293px;
+        background-color: darkcyan;
+        border-radius: 20px;
+
+        @media screen and (min-width: 768px){
+            width: 262px;  
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 320px;
+        }
+    }
+
+    &__title{
+        font-size: 12px;
+        padding-left: 15px;
+        padding-top: 15px;
+        @media screen and (min-width: 1200px){
+            font-size: 14px;
+        }
+    }
+
+    &__oclock{
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        padding-top: 25px;
+
+        @media screen and (min-width: 1200px){
+            font-size: 24px;
+        }
+    }
+
+    &__btn_box{
+        display: flex;
+        gap: 21px;
+        justify-content: center;
+    }
+
+    &__hourly_btn{
+        font-size: 9px;
+        background-color: #FFB36C;
+        padding: 6px 11.5px;
+        border: none;
+        border-radius: 5px;
+
+        @media screen and (min-width: 1200px){
+            font-size: 10px;
+            padding: 8px 18px;
+
+        }
+    }
+
+    &__day_box{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__day{
+        font-size: 12px;
+        padding-right: 12px;
+        border-right: 1px solid black;
+        @media screen and (min-width: 1200px){
+            padding-right: 13px;
+            font-size: 14px;
+
+        }
+    }
+
+    &__week{
+        font-size: 12px;
+        padding-left: 12px;
+    }
+
+    &__photo{
+        width: 83px;
+        height: 83px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width: 768px){
+            width: 76px;  
+            height: 76px;
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    &__temper{
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+
+        @media screen and (min-width: 1200px){
+            font-size: 32px;
+
+        }
+    }
+
+    &__retry_btn{
+        margin-left: 32px;
+        margin-bottom: 22px;
+        width: 24px;
+        height: 24px;
+
+         @media screen and (min-width: 768px){
+            margin-left: 16px;
+            margin-bottom: 17px;
+            width: 30px;
+            height: 30px;
+        }
+
+        @media screen and (min-width: 1200px){
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__like_btn{
+        margin-left: 14px;
+        margin-bottom: 22px;
+        width: 24px;
+        height: 24px;
+
+        @media screen and (min-width: 768px){
+            margin-bottom: 17px;
+        }
+        @media screen and (min-width: 1200px){
+            width: 30px;
+            height: 30px;
+            margin-left: 16px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__see_btn{
+        border: none;
+        font-size: 9px;
+        padding: 8px 20px;
+        background-color: #FFB36C;
+        border-radius: 5px;
+        margin-left: 32px;
+        margin-right: 27px;
+        margin-bottom: 22px;
+
+        @media screen and (min-width: 768px){
+            padding: 6px 18.5px;
+            margin-right: 30px;
+            margin-bottom: 17px;
+        }
+
+        @media screen and (min-width: 1200px){
+            padding: 8px 25px;
+            margin-right: 37px;
+            margin-left: 38px;
+            margin-bottom: 21px;
+        }
+    }
+
+    &__trash_btn{
+        margin-right: 22px;
+        margin-bottom: 22px;
+        width: 24px;
+        height: 24px;
+
+        @media screen and (min-width: 768px){
+            padding: 6px 18.5px;
+            margin-right: 17px;
+            margin-bottom: 17px;
+        }
+
+        @media screen and (min-width: 1200px){
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+

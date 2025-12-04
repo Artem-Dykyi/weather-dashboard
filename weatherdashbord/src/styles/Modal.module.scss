@@ -1,0 +1,90 @@
+.backdrop{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal{
+    // background-color: rgb(196, 102, 102);
+    border-radius: 30px;
+    // width: 600px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+
+    &__form{
+        width: 600px;
+        background-color: #fff;
+        border-radius: 30px;
+
+    }
+    
+
+
+    &__title{
+        font-size: 28px;
+        color: #000;
+        text-align: center;
+        padding-top: 28px;
+        padding-bottom: 40px;
+        font-weight: 500;
+    }
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__txt{
+        font-weight: 500;
+        font-size: 14px;
+        color: #000;
+        margin-left: 80px;
+        margin-bottom: 15px;
+    }
+
+    &__input{
+        padding-left: 20px;
+        padding-top: 17px;
+        padding-bottom: 18px;
+        padding-right: 346px;
+
+        border: none;
+        border-radius: 10px;
+        background: #e4e4e4;
+        margin-right: 80px;
+        margin-left: 80px;
+        margin-bottom: 30px;
+    }
+
+    &__input::placeholder{
+            font-weight: 500;
+            font-size: 14px;
+            color: #ababab;
+        }
+
+    &__btn{
+        border-radius: 10px;
+        padding: 10px 30px;
+        background: #ffb36c;
+
+        font-weight: 400;
+        font-size: 14px;
+        color: #000;
+        border: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__already_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}

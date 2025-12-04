@@ -1,0 +1,40 @@
+.pet{
+    display: block;
+    display: none;
+
+    @media screen and (min-width: 1200px){
+        display: block;
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 20px;
+        color: #000;
+    }
+
+    &__gallery{
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
+    &__gallery_photo{
+        width: 270px;
+        height: 208px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &__btn{
+        background: #ffb36c;
+        font-weight: 500;
+        font-size: 16px;
+        color: #000;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 10px;
+        margin-bottom: 80px;
+    }
+}

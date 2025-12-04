@@ -1,3 +1,8 @@
+.p{
+    margin: 0;
+    padding: 0;
+}
+
 .hero{
     background-image: url("../../src/image/mainCloud.png");
     background-size: cover;
@@ -33,12 +38,27 @@
     }
 
     &__month{
-        width: 164px;
+        // width: 164px;
+        width: 200px;
         font-weight: 500;
         font-size: 24px;
         color: #fff;
         padding-left: 52px;
     }
+
+    &__weekday{
+        // width: 164px;
+        font-weight: 500;
+        font-size: 24px;
+        color: #fff;
+        padding-left: 52px;
+    }
+
+    // &__box_text{
+    //     display: flex;
+    //     flex-direction: column;
+
+    // }
 
     &__search_box{
         padding-bottom: 104px;
