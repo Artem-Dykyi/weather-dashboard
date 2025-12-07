@@ -13,7 +13,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.94.0"
   },
-  "homepage": "",
+  "homepage": "https://artem-dykyi.github.io/weather-dashboard/",
 
   "scripts": {
     "start": "react-scripts start",
