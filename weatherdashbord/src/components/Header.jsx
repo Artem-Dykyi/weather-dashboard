@@ -8,6 +8,10 @@ export function Header({ onClick, currentUser }) {
       <div className={c.container}>
         <div className={s.header__main_box}>
           <img src="/image/logo.png" alt="" className={s.header__logo} />
+          <a className={s.header__menu_text}>Menu</a>
+          <div className={s.header__menu_box}>
+
+          
           <div className={s.header__box}>
             <ul className={s.header__list}>
               <li className={s.header__list_item}>Who we are</li>
@@ -25,6 +29,7 @@ export function Header({ onClick, currentUser }) {
             )}
 
             <img src="/image/user.png" alt="" className={s.header__icon_prof} />
+          </div>
           </div>
         </div>
       </div>

@@ -5,11 +5,14 @@ import {Hero} from './components/Hero'
 import {Footer} from './components/Footer'
 import {Modal} from './components/Modal'
 import { Pets } from './components/Pets';
-// import { Gallary } from './components/Gallary';
+import { Gallary } from './components/Gallary';
 // import { Cardssun } from './components/Cardssun';
 import { CardssunList } from './components/CardsunList';
 import { Indicator } from './components/Indicators';
+// import Weather8Days from './components/Daysforecast';
 // import { Daysforecast } from './components/Daysforecast';
+import Daysforecast from './components/Daysforecast';
+import { Hourly } from './components/Hourly';
 
 // import Hourly from './components/Hourly';
 import { useEffect, useState } from 'react';
@@ -55,10 +58,11 @@ function App() {
         <CardssunList cities={cities} onRemove={removeCity}/>
         {/* <Cardssun /> */}
         <Indicator/>
-        {/* <Hourly lat={50.45} lon={30.52}/> */}
-        {/* <Daysforecast/> */}
+        <Hourly/>
+        <Daysforecast/>
+        
         <Pets/>
-        {/* <Gallary/> */}
+        <Gallary/>
         <Footer/>
       </>
 

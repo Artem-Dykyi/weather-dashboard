@@ -9,6 +9,7 @@ export function Indicator(){
     useEffect(()=>{
         async function fetchIndicator(){
             const res = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=7417c098ce07759ed28f47a87c89cc13")
+            // https://api.openweathermap.org/data/2.5/forecast?lat=45&lon=34&appid=0b53411ffccdebc41af3375c263ec271&units=metric
 
             setIndecator({
                 feelLike: res.data.main.feels_like,

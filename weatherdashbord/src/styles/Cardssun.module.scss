@@ -2,7 +2,7 @@
     padding-bottom: 35px;
 
     &__box{
-        background-color: coral;
+        // background-color: coral;
         display: flex;
         justify-content: center;
         padding-bottom: 35px;
@@ -10,7 +10,7 @@
 
     &__card{
         width: 293px;
-        background-color: darkcyan;
+        background-color: #E8E8E8;
         border-radius: 20px;
 
         @media screen and (min-width: 768px){
@@ -166,7 +166,7 @@
 
         @media screen and (min-width: 1200px){
             padding: 8px 25px;
-            margin-right: 37px;
+            // margin-right: 37px;
             margin-left: 38px;
             margin-bottom: 21px;
         }

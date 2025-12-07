@@ -28,9 +28,19 @@
         font-size: 28px;
         color: #000;
         text-align: center;
-        padding-top: 28px;
+        padding-top: 25px;
         padding-bottom: 40px;
         font-weight: 500;
+
+        @media screen and (min-width: 768px){
+            padding-top: 30px;
+
+        }
+    
+        @media screen and (min-width: 1200px){
+            padding-top: 28px;
+
+        }
     }
 
     &__box{
@@ -40,30 +50,70 @@
 
     &__txt{
         font-weight: 500;
-        font-size: 14px;
+        font-size: 12px;
         color: #000;
         margin-left: 80px;
         margin-bottom: 15px;
+
+        @media screen and (min-width: 768px){
+            
+
+        }
+    
+        @media screen and (min-width: 1200px){
+        font-size: 14px;
+            
+
+        }
     }
 
     &__input{
         padding-left: 20px;
-        padding-top: 17px;
-        padding-bottom: 18px;
-        padding-right: 346px;
+        padding-top: 12px;
+        padding-bottom: 13px;
+        padding-right: 159px;
 
         border: none;
         border-radius: 10px;
         background: #e4e4e4;
-        margin-right: 80px;
-        margin-left: 80px;
+        margin-right: 25px;
+        margin-left: 25px;
         margin-bottom: 30px;
+
+         @media screen and (min-width: 768px){
+            padding-left: 20px;
+            padding-top: 12px;
+            padding-bottom: 13px;
+            padding-right: 226px;
+            margin-right: 45px;
+            margin-left: 45px;
+
+        }
+    
+        @media screen and (min-width: 1200px){
+            padding-left: 20px;
+            padding-top: 17px;
+            padding-bottom: 18px;
+            padding-right: 346px;
+            margin-right: 80px;
+            margin-left: 80px;
+        }
     }
 
     &__input::placeholder{
             font-weight: 500;
-            font-size: 14px;
+            font-size: 12px;
             color: #ababab;
+            @media screen and (min-width: 768px){
+            
+
+            }
+    
+        @media screen and (min-width: 1200px){
+            font-size: 14px;
+
+        }
+
         }
 
     &__btn{
