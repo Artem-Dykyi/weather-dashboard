@@ -1,200 +1,169 @@
-// import React, { useEffect, useState } from "react";
 // import s from "../styles/Hourly.module.scss";
 // import c from "../styles/Container.module.scss";
+// import React from "react";
 // import { Line } from "react-chartjs-2";
-// import {
-//   Chart,
-//   LineElement,
-//   PointElement,
-//   CategoryScale,
-//   LinearScale,
-//   Tooltip,
-//   Legend,
-// } from "chart.js";
+// import { Chart, CategoryScale, LinearScale, LineElement, PointElement, Title } from "chart.js";
 
-// Chart.register(
-//   LineElement,
-//   PointElement,
-//   CategoryScale,
-//   LinearScale,
-//   Tooltip,
-//   Legend
-// );
+// Chart.register(CategoryScale, LinearScale, LineElement, PointElement, Title);
 
-// export function Hourly() {
-//   const [temps, setTemps] = useState([]);
-//   const [dateLabel, setDateLabel] = useState("");
+// export  function Hourly() {
+//   const today = new Date();
+// //   const monthName = today.toLocaleString("en-US", { month: "short" });
+// //   const day = today.getDate();
 
-//   useEffect(() => {
-//   async function load() {
-//     const url =
-//       "https://api.openweathermap.org/data/2.5/forecast?lat=45&lon=34&appid=0b53411ffccdebc41af3375c263ec271&units=metric";
-
-//     const res = await fetch(url);
-//     const data = await res.json();
-
-//     // Беремо до 6pm (00–18:00)
-//     const slice = data.list.slice(0, 7);
-
-//     const t = slice.map((item) => item.main.temp);
-
-//     // Дата
-//     const firstDate = new Date(slice[0].dt * 1000);
-//     const day = firstDate.getDate();
-//     const month = firstDate.toLocaleString("en-US", { month: "short" });
-
-//     setDateLabel(`${day} ${month}`);
-//     setTemps(t);
-//   }
-
-//   load();
-// }, []);
-
-//   const labels = [
-//     dateLabel,
-//     "1am",
-//     "2am",
-//     "3am",
-//     "4am",
-//     "5am",
-//     "6am",
-//     "7am",
-//     "8am",
-//     "9am",
-//     "10am",
-//     "11am",
-//     "12am",
-//     "1pm",
-//     "2pm",
-//     "3pm",
-//     "4pm",
-//     "5pm",
-//     "6pm",
+  
+//   const hours = [
+//     "1AM","2AM","3AM","4AM","5AM","6AM",
+//     "7AM","8AM","9AM","10AM","11AM","12PM",
+//     "1PM","2PM","3PM","4PM","5PM","6PM"
 //   ];
 
-//   const chartData = {
+//   const labels = hours.map(h => `${h}`);
+
+
+//   const data = {
 //     labels,
 //     datasets: [
 //       {
-//         label: "",
-//         data: [null, ...temps],
-//         borderColor: "orange",
+//         label: "Activity",
+//         data: [
+//           10,12,14,18,20,22,      // 1AM–6AM
+//           15,17,19,21,24,23,      // 7AM–12PM
+//           18,20,22,19,17,15       // 1PM–6PM
+//         ],
 //         borderWidth: 2,
 //         tension: 0.3,
-//         pointRadius: 4,
-//         pointBackgroundColor: "transparent",
 //       },
 //     ],
 //   };
 
-//   const chartOptions = {
+//   const options = {
 //     responsive: true,
 //     scales: {
+//       x: {
+//         position: "top",
+//         ticks: {
+//           maxRotation: 90,
+//           minRotation: 90,
+//           font: { size: 10 },
+//         },
+//       },
 //       y: {
 //         min: 5,
 //         max: 25,
 //         ticks: { stepSize: 5 },
 //       },
-//       x: {
-//         position: "top",
-//         ticks: {
-//           font: { size: 14 },
-//         },
-//       },
-//     },
-//     plugins: {
-//       legend: { display: false },
-//       tooltip: { enabled: true },
 //     },
 //   };
 
-//   return (
-//     <>
-//         <section className={s.hour}>
+//   return (<>
+//     <section className={s.hour}>
 //             <div className={c.container}>
 //                 <div className={s.hour__main_box}> 
-//                     <h2 className={s.hour__title}>Hourly forecast</h2>
-//                     <div className={s.hour__box}>
-//                         <Line data={chartData} options={chartOptions} />
+//                      <h2 className={s.hour__title}>Hourly forecast</h2>
+//                   <div className={s.hour__box}>
+//                          <Line data={data} options={options} />
 //                     </div>
 //                 </div> 
-//             </div>
-//         </section>
-//     </>
-    
-//   );
+//            </div>
+//          </section>
+//   </>);
 // }
 
 
 
-import s from "../styles/Hourly.module.scss";
-import c from "../styles/Container.module.scss";
-import React from "react";
-import { Line } from "react-chartjs-2";
-import { Chart, CategoryScale, LinearScale, LineElement, PointElement, Title } from "chart.js";
+// import s from "../styles/Hourly.module.scss";
+// import c from "../styles/Container.module.scss";
+// import React, { useEffect, useState } from "react";
+// import { Line } from "react-chartjs-2";
+// import { Chart, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip } from "chart.js";
 
-Chart.register(CategoryScale, LinearScale, LineElement, PointElement, Title);
+// Chart.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip);
 
-export  function Hourly() {
-  const today = new Date();
-//   const monthName = today.toLocaleString("en-US", { month: "short" });
-//   const day = today.getDate();
+// export function Hourly() {
+//   const [hours, setHours] = useState(null);
+//   const [temps, setTemps] = useState(null);
 
-  // 18 годин — 1AM → 6PM
-  const hours = [
-    "1AM","2AM","3AM","4AM","5AM","6AM",
-    "7AM","8AM","9AM","10AM","11AM","12PM",
-    "1PM","2PM","3PM","4PM","5PM","6PM"
-  ];
+//   const API_KEY = "9f8d339c67a2506f6b7623e13b7ab81d";
 
-  const labels = hours.map(h => `  – ${h}`);
+//   useEffect(() => {
+//     async function fetchHourly() {
+//       try {
+//         const res = await fetch(
+//           `https://api.openweathermap.org/data/2.5/forecast?lat=50.45&lon=30.52&appid=${API_KEY}&units=metric`
+//         );
 
+//         const data = await res.json();
+//         console.log("WEATHER DATA:", data);
 
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Activity",
-        data: [
-          10,12,14,18,20,22,      // 1AM–6AM
-          15,17,19,21,24,23,      // 7AM–12PM
-          18,20,22,19,17,15       // 1PM–6PM
-        ],
-        borderWidth: 2,
-        tension: 0.3,
-      },
-    ],
-  };
+//         if (!data.list) return;
 
-  const options = {
-    responsive: true,
-    scales: {
-      x: {
-        position: "top",
-        ticks: {
-          maxRotation: 90,
-          minRotation: 90,
-          font: { size: 10 },
-        },
-      },
-      y: {
-        min: 5,
-        max: 25,
-        ticks: { stepSize: 5 },
-      },
-    },
-  };
+//         const sliced = data.list.slice(0, 18);
 
-  return (<>
-    <section className={s.hour}>
-            <div className={c.container}>
-                <div className={s.hour__main_box}> 
-                     <h2 className={s.hour__title}>Hourly forecast</h2>
-                  <div className={s.hour__box}>
-                         <Line data={data} options={options} />
-                    </div>
-                </div> 
-           </div>
-         </section>
-  </>);
-}
+//         const h = sliced.map(item => {
+//           const d = new Date(item.dt * 1000);
+//           return d.toLocaleString("en-US", {
+//             hour: "numeric",
+//             hour12: true,
+//           });
+//         });
+
+//         const t = sliced.map(item => Math.round(item.main.temp));
+
+//         setHours(h);
+//         setTemps(t);
+//       } catch (err) {
+//         console.log("ERR:", err);
+//       }
+//     }
+
+//     fetchHourly();
+//   }, []);
+
+//   if (!hours || !temps) return <p style={{ color: "white" }}>Loading...</p>;
+
+//   const chartData = {
+//     labels: hours,
+//     datasets: [
+//       {
+//         label: "Temp °C",
+//         data: temps,
+//         borderColor: "rgb(0,150,255)",
+//         backgroundColor: "rgba(0,150,255,0.3)",
+//         borderWidth: 2,
+//         tension: 0.4,
+//         pointRadius: 3,
+//       },
+//     ],
+//   };
+
+//   const options = {
+//     responsive: true,
+//     scales: {
+//       x: {
+//         position: "top",
+//         ticks: {
+//           maxRotation: 90,
+//           minRotation: 90,
+//           font: { size: 10 },
+//         },
+//       },
+//       y: {
+//         beginAtZero: false,
+//       },
+//     },
+//   };
+
+//   return (
+//     <section className={s.hour}>
+//       <div className={c.container}>
+//         <div className={s.hour__main_box}>
+//           <h2 className={s.hour__title}>Hourly forecast</h2>
+//           <div className={s.hour__box}>
+//             <Line data={chartData} options={options} />
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

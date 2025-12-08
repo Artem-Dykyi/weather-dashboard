@@ -2,12 +2,16 @@ import React from "react";
 import s from "../styles/Header.module.scss";
 import c from "../styles/Container.module.scss";
 
+import logoIcon from "../image/logo.png"
+import userIcon from "../image/user.png"
+
+
 export function Header({ onClick, currentUser }) {
   return (
     <header className={s.header}>
       <div className={c.container}>
         <div className={s.header__main_box}>
-          <img src="/image/logo.png" alt="" className={s.header__logo} />
+          <img src={logoIcon} alt="" className={s.header__logo} />
           <a className={s.header__menu_text}>Menu</a>
           <div className={s.header__menu_box}>
 
@@ -28,7 +32,7 @@ export function Header({ onClick, currentUser }) {
               </button>
             )}
 
-            <img src="/image/user.png" alt="" className={s.header__icon_prof} />
+            <img src={userIcon} alt="" className={s.header__icon_prof} />
           </div>
           </div>
         </div>

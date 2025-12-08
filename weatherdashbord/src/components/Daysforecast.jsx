@@ -33,13 +33,13 @@ const weatherMap = {
   99: { desc: "Thunderstorm", icon: "⛈️" },
 };
 
-export default function Daysforecast() {
+export default function Daysforecast({lat, lon}) {
   const [forecast, setForecast] = useState([]);
 
   useEffect(() => {
     async function load() {
       const res = await fetch(
-        "https://api.open-meteo.com/v1/forecast?latitude=77&longitude=34&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=8"
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto&forecast_days=8`
       );
       const data = await res.json();
 
@@ -78,7 +78,7 @@ export default function Daysforecast() {
     }
 
     load();
-  }, []);
+  }, [lat, lon]);
 
   return (
     <>

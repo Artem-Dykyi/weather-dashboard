@@ -3,12 +3,16 @@ import s from "../styles/Indicators.module.scss";
 import c from "../styles/Container.module.scss";
 import axios from "axios";
 
-export function Indicator(){
+export function Indicator({lat, lon}){
     const [indecator, setIndecator] = useState(null)
+
+    // const API_Key = "7417c098ce07759ed28f47a87c89cc13"
 
     useEffect(()=>{
         async function fetchIndicator(){
-            const res = await axios.get("https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=7417c098ce07759ed28f47a87c89cc13")
+            const res = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7417c098ce07759ed28f47a87c89cc13`
+            )
             // https://api.openweathermap.org/data/2.5/forecast?lat=45&lon=34&appid=0b53411ffccdebc41af3375c263ec271&units=metric
 
             setIndecator({
@@ -23,7 +27,7 @@ export function Indicator(){
         }
 
         fetchIndicator()
-    },[]);
+    },[lat, lon]);
 
     if (!indecator) return <p>Loading...</p>;
 

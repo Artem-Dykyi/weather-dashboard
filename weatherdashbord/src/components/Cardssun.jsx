@@ -4,9 +4,13 @@ import s from "../styles/Cardssun.module.scss";
 // import c from "../styles/Container.module.scss";
 import axios from "axios";
 
+import deleteIcon from "../image/delete.png"
+import heartIcon from "../image/heart.png"
+import refreshIcon from "../image/ref.png"
+
 const API_KEY = "54127d5f81d4289610e32702a0b4ce52";
 
-export function Cardssun({city, onRemove}) {
+export function Cardssun({city, onRemove, onSelectCity}) {
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
@@ -29,6 +33,8 @@ export function Cardssun({city, onRemove}) {
         icon: res.data.weather[0].icon,
         timestamp: res.data.dt,
         timezone: res.data.timezone,
+        lat: res.data.coord.lat,
+        lon: res.data.coord.lon,
       });
     }
 
@@ -73,10 +79,16 @@ export function Cardssun({city, onRemove}) {
                 {getLocalTime(weather.timezone)}
               </p>
               <div className={s.weather__btn_box}>
-                <button className={s.weather__hourly_btn}>
+                <button 
+                  className={s.weather__hourly_btn}
+                  onClick={() => onSelectCity(weather)}
+                >
                   Hourly forecast
                 </button>
-                <button className={s.weather__hourly_btn}>
+                <button 
+                  className={s.weather__hourly_btn}
+                  onClick={() => onSelectCity(weather)}
+                  >
                   Weekly forecast
                 </button>
               </div>
@@ -96,10 +108,22 @@ export function Cardssun({city, onRemove}) {
               <p className={s.weather__temper}>{weather.temp}°C</p>
 
               <div className={s.weather__more_box}>
-                <button className={s.weather__retry_btn}>ret</button>
-                <button className={s.weather__like_btn}>like</button>
-                <button className={s.weather__see_btn}>See more</button>
-                <button className={s.weather__trash_btn} onClick={onRemove}>trash</button>
+                <button className={s.weather__retry_btn}>
+                  <img src={refreshIcon} alt="" />
+                </button>
+                <button className={s.weather__like_btn}>
+                  <img src={heartIcon} alt="" />
+                </button>
+                <button 
+                  className={s.weather__see_btn}
+                  onClick={() => onSelectCity(weather)}
+                  >See more</button>
+                <button 
+                  className={s.weather__trash_btn} 
+                  onClick={onRemove}
+                  >
+                  <img src={deleteIcon} alt="" />
+                </button>
               </div>
             </li>
           //</div>

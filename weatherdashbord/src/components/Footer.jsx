@@ -2,6 +2,11 @@ import React from "react";
 import s from "../styles/Footer.module.scss";
 import c from "../styles/Container.module.scss";
 
+import facebookIcon from "../image/facebook.png"
+import whatsappIcon from "../image/whatsapp.png"
+import instIcon from "../image/instagram.png"
+import logoIcon from "../image/logo.png"
+
 export function Footer() {
   return (
     <footer className={s.footer}>
@@ -9,7 +14,7 @@ export function Footer() {
         <div className={s.footer__wrapper}>
           <div className={s.footer__box}>
             <div className={s.footer__sub_box}>
-              <img src="/image/logo.png" alt="" className={s.footer__logo} />
+              <img src={logoIcon} alt="" className={s.footer__logo} />
 
               <div className={s.footer__sub_wrap}>
                 <h2 className={s.footer_title}>Address</h2>
@@ -29,21 +34,21 @@ export function Footer() {
               <li className={s.footer__list_cont_item}>
                 <img
                   className={s.footer__list_cont_photo}
-                  src="/image/instagram.png"
+                  src={instIcon}
                   alt="instagram"
                 />
               </li>
               <li className={s.footer__list_cont_item}>
                 <img
                   className={s.footer__list_cont_photo}
-                  src="/image/facebook.png"
+                  src={facebookIcon}
                   alt="facebook"
                 />
               </li>
               <li className={s.footer__list_cont_item}>
                 <img
                   className={s.footer__list_cont_photo}
-                  src="/image/whatsapp.png"
+                  src={whatsappIcon}
                   alt="watsap"
                 />
               </li>

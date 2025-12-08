@@ -9,10 +9,11 @@ import { Gallary } from './components/Gallary';
 // import { Cardssun } from './components/Cardssun';
 import { CardssunList } from './components/CardsunList';
 import { Indicator } from './components/Indicators';
+// import { Indicator } from './components/Indicators';
 // import Weather8Days from './components/Daysforecast';
 // import { Daysforecast } from './components/Daysforecast';
 import Daysforecast from './components/Daysforecast';
-import { Hourly } from './components/Hourly';
+// import { Hourly } from './components/Hourly';
 
 // import Hourly from './components/Hourly';
 import { useEffect, useState } from 'react';
@@ -20,6 +21,7 @@ import { useEffect, useState } from 'react';
 function App() {
     const [isOpen, setIsOpen] = useState(false)
     const [currentUser, setCurrentUser] = useState(null);
+    const [selectedCity, setSelectedCity] = useState(null);
 
     const savedCities = JSON.parse(localStorage.getItem("cities")) || ["London"];
     const [cities, setCities] = useState(savedCities);
@@ -42,10 +44,7 @@ function App() {
       setCities(prev => prev.filter(city => city !== cityToRemove));
     }
 
-    ///////// hourly 
-  
 
-  //// hourly 
   return (
       <>
         <Header onClick={handleOpenModal} currentUser={currentUser}/>
@@ -55,11 +54,21 @@ function App() {
           onClose={handleCloseModal}
           setCurrentUser={setCurrentUser}
         />
-        <CardssunList cities={cities} onRemove={removeCity}/>
-        {/* <Cardssun /> */}
-        <Indicator/>
-        <Hourly/>
-        <Daysforecast/>
+        <CardssunList 
+          cities={cities} 
+          onRemove={removeCity}
+          onSelectCity={setSelectedCity}
+          />
+
+        {currentUser && selectedCity &&(
+          <>
+            <Indicator lat={selectedCity.lat} lon={selectedCity.lon}/>
+            {/* <Hourly/> */}
+            <Daysforecast lat={selectedCity.lat} lon={selectedCity.lon}/>
+          </>
+          )
+        }
+        
         
         <Pets/>
         <Gallary/>

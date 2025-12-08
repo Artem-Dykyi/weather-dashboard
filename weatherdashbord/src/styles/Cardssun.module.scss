@@ -113,38 +113,42 @@
     }
 
     &__retry_btn{
+        background-color: #E8E8E8;
+        border: none;
         margin-left: 32px;
-        margin-bottom: 22px;
-        width: 24px;
-        height: 24px;
+        // margin-bottom: 22px;
+        // width: 24px;
+        // height: 24px;
 
          @media screen and (min-width: 768px){
             margin-left: 16px;
-            margin-bottom: 17px;
-            width: 30px;
-            height: 30px;
+            // margin-bottom: 17px;
+            // width: 30px;
+            // height: 30px;
         }
 
         @media screen and (min-width: 1200px){
             margin-left: 20px;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
     }
 
     &__like_btn{
+        background-color: #E8E8E8;
+        border: none;
         margin-left: 14px;
-        margin-bottom: 22px;
-        width: 24px;
-        height: 24px;
+        // margin-bottom: 22px;
+        // width: 24px;
+        // height: 24px;
 
         @media screen and (min-width: 768px){
-            margin-bottom: 17px;
+            // margin-bottom: 17px;
         }
         @media screen and (min-width: 1200px){
-            width: 30px;
-            height: 30px;
+            // width: 30px;
+            // height: 30px;
             margin-left: 16px;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
     }
 
@@ -154,42 +158,48 @@
         padding: 8px 20px;
         background-color: #FFB36C;
         border-radius: 5px;
-        margin-left: 32px;
-        margin-right: 27px;
+        margin-left: 20px;
+        margin-right: 10px;
         margin-bottom: 22px;
 
         @media screen and (min-width: 768px){
             padding: 6px 18.5px;
-            margin-right: 30px;
+            // margin-right: 30px;
             margin-bottom: 17px;
         }
 
         @media screen and (min-width: 1200px){
             padding: 8px 25px;
             // margin-right: 37px;
-            margin-left: 38px;
+            // margin-left: 38px;
             margin-bottom: 21px;
         }
     }
 
     &__trash_btn{
+        background-color: #E8E8E8;
+        border: none;
         margin-right: 22px;
-        margin-bottom: 22px;
-        width: 24px;
-        height: 24px;
+        // margin-bottom: 22px;
+        // width: 24px;
+        // height: 24px;
 
         @media screen and (min-width: 768px){
-            padding: 6px 18.5px;
+            // padding: 6px 18.5px;
             margin-right: 17px;
-            margin-bottom: 17px;
+            // margin-bottom: 17px;
         }
 
         @media screen and (min-width: 1200px){
-            width: 30px;
-            height: 30px;
+            // width: 30px;
+            // height: 30px;
             margin-right: 20px;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
+    }
+
+    &__more_box{
+        align-items: center;
     }
 }
 
