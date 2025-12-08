@@ -23,7 +23,9 @@ function App() {
     const [currentUser, setCurrentUser] = useState(null);
     const [selectedCity, setSelectedCity] = useState(null);
 
-    const savedCities = JSON.parse(localStorage.getItem("cities")) || ["London"];
+    const savedCities = JSON.parse(localStorage.getItem("cities"));
+    // const savedCities = JSON.parse(localStorage.getItem("cities")) || ["London"];
+
     const [cities, setCities] = useState(savedCities);
 
 
