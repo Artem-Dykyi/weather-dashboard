@@ -9,7 +9,7 @@ import logoIcon from "../image/logo.png"
 
 export function Footer() {
   return (
-    <footer className={s.footer}>
+    <footer className={s.footer} id="footer">
       <div className={c.container}>
         <div className={s.footer__wrapper}>
           <div className={s.footer__box}>
@@ -32,25 +32,31 @@ export function Footer() {
             <h2 className={s.footer__title}>Contact us</h2>
             <ul className={s.footer__list_contact}>
               <li className={s.footer__list_cont_item}>
-                <img
-                  className={s.footer__list_cont_photo}
-                  src={instIcon}
-                  alt="instagram"
-                />
+                <a href="https://www.instagram.com/">
+                  <img
+                    className={s.footer__list_cont_photo}
+                    src={instIcon}
+                    alt="instagram"
+                  />
+                </a>
               </li>
               <li className={s.footer__list_cont_item}>
-                <img
-                  className={s.footer__list_cont_photo}
-                  src={facebookIcon}
-                  alt="facebook"
-                />
+                <a href="https://www.facebook.com/?locale=uk_UA">
+                  <img
+                    className={s.footer__list_cont_photo}
+                    src={facebookIcon}
+                    alt="facebook"
+                  />
+                </a>
               </li>
               <li className={s.footer__list_cont_item}>
-                <img
-                  className={s.footer__list_cont_photo}
-                  src={whatsappIcon}
-                  alt="watsap"
-                />
+                <a href="https://www.whatsapp.com/?lang=uk">
+                  <img
+                    className={s.footer__list_cont_photo}
+                    src={whatsappIcon}
+                    alt="watsap"
+                  />
+                </a>
               </li>
             </ul>
           </div>

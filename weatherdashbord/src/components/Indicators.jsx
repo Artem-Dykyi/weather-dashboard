@@ -3,6 +3,14 @@ import s from "../styles/Indicators.module.scss";
 import c from "../styles/Container.module.scss";
 import axios from "axios";
 
+import temperIcon from "../image/temperfeel.png"
+import humidityIcon from "../image/humidity.png"
+import presserIcon from "../image/presser.png"
+import windowSpeedIcon from "../image/windowSPeed.png"
+import visibilityIcon from "../image/visibili.png"
+
+
+
 export function Indicator({lat, lon}){
     const [indecator, setIndecator] = useState(null)
 
@@ -38,7 +46,7 @@ export function Indicator({lat, lon}){
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Feels like</h2>
                         <p className={s.indicator__text}>{indecator.feelLike}</p>
-                        <img src="/image/temperfeel.png" alt="#" className={s.indicator__photo}/>
+                        <img src={temperIcon} alt="#" className={s.indicator__photo}/>
                     </li>
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Min ℃</h2>
@@ -49,22 +57,22 @@ export function Indicator({lat, lon}){
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Humidity</h2>
                         <p className={s.indicator__text}>{indecator.humidity}%</p>
-                        <img src="/image/humidity.png" alt="#" className={s.indicator__photo}/>
+                        <img src={humidityIcon} alt="#" className={s.indicator__photo}/>
                     </li>
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Pressure</h2>
                         <p className={s.indicator__text}>{indecator.pressure} Pa</p>
-                        <img src="/image/presser.png" alt="#" className={s.indicator__photo}/>
+                        <img src={presserIcon} alt="#" className={s.indicator__photo}/>
                     </li>
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Wind speed</h2>
                         <p className={s.indicator__text}>{indecator.windSpeed} m/s</p>
-                        <img src="/image/windowSpeed.png" alt="#" className={s.indicator__photo}/>
+                        <img src={windowSpeedIcon} alt="#" className={s.indicator__photo}/>
                     </li>
                     <li className={s.indicator__item}>
                         <h2 className={s.indicator__title}>Visibility</h2>
                         <p className={s.indicator__text}>{indecator.visibility}</p>
-                        <img src="/image/visibili.png" alt="#" className={s.indicator__photo}/>
+                        <img src={visibilityIcon} alt="#" className={s.indicator__photo}/>
                     </li>
                 </ul>
             </div>

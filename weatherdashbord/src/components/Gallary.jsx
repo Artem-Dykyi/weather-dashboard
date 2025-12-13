@@ -10,6 +10,7 @@ const API_KEY = "49720943-65d54ece17a872b9e08aac171";
 export function Gallary() {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
+  // const [active, setActive] = useState(2);
   const [active, setActive] = useState(2);
 
   useEffect(() => {
@@ -36,34 +37,49 @@ export function Gallary() {
       });
     }
 
+    
+
     fetchImages();
   }, [page]);
 
-  const ClassItem =(i)=>{
-    const total = items.length
+  const next = () => {
+  setActive(prev => {
+    const nextIndex = prev + 1;
 
-    const center = active;
-    const right1 = (active + 1) % total;           
-    const right2 = (active + 2) % total;           
+    // якщо доходиш до передостаньої — підвантажуємо
+    if (nextIndex >= items.length - 2) {
+      setPage(p => p + 1);
+    }
 
-    const left1 = (active - 1 + total) % total;    
-    const left2 = (active - 2 + total) % total;    
+    return nextIndex;
+  });
+};
 
-    if (i === center) return s.gallery__big;
-    if (i === right1) return s.gallery__mediumRight;
-    if (i === right2) return s.gallery__smallRight;
+const prev = () => {
+  setActive(prev => (prev === 0 ? prev : prev - 1));
+};
 
-    if (i === left1) return s.gallery__mediumLeft;
-    if (i === left2) return s.gallery__smallLeft;
+  const ClassItem = (i) => {
+  const diff = i - active;
 
-    return s.hidden;
-  }
+  if (diff === 0) return s.gallery__big;
+
+  if (diff === 1) return s.gallery__mediumRight;
+  if (diff === 2) return s.gallery__smallRight;
+
+  if (diff === -1) return s.gallery__mediumLeft;
+  if (diff === -2) return s.gallery__smallLeft;
+
+  return s.hidden;
+};
 
   return (
     <>
       <div className={c.container}>
         <div className={s.gallery}>
           <h2 className={s.gallery__title}>Beautiful nature</h2>
+          <button className={s.btnLeft} onClick={prev}>‹</button>
+          <button className={s.btnRight} onClick={next}>›</button>
           <div className={s.gallery__carousel}>
             {items.map((item, i) => (
               <img key={item.id} src={item.url} alt="" className={ClassItem(i)} />
