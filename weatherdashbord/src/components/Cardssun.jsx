@@ -109,10 +109,10 @@ export function Cardssun({city, onRemove, onSelectCity}) {
 
               <div className={s.weather__more_box}>
                 <button className={s.weather__retry_btn}>
-                  <img src={refreshIcon} alt="" />
+                  <img src={refreshIcon} alt="" className={s.weather__img}/>
                 </button>
                 <button className={s.weather__like_btn}>
-                  <img src={heartIcon} alt="" />
+                  <img src={heartIcon} alt="" className={s.weather__img}/>
                 </button>
                 <button 
                   className={s.weather__see_btn}
@@ -122,7 +122,7 @@ export function Cardssun({city, onRemove, onSelectCity}) {
                   className={s.weather__trash_btn} 
                   onClick={onRemove}
                   >
-                  <img src={deleteIcon} alt="" />
+                  <img src={deleteIcon} alt="" className={s.weather__img}/>
                 </button>
               </div>
             </li>

@@ -61,7 +61,7 @@ function handleSubmit(e){
         <div className={c.container}>
           <div className={s.modal}>
             <form action="" className={s.modal__form} onSubmit={handleSubmit}>
-              <button onClick={onClose}>clo</button>
+              <button onClick={onClose}>Х</button>
               <h2 className={s.modal__title}>Sign up</h2>
               <div className={s.modal__box}>
                 <label className={s.modal__txt}>Username</label>

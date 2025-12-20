@@ -201,5 +201,15 @@
     &__more_box{
         align-items: center;
     }
+
+    &__img{
+        width: 24px;
+        height: 24px;
+
+        @media screen and (min-width: 1200px){
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 
